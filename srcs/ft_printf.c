@@ -12,6 +12,12 @@
 ** a jour a chaque ajout de elem lors de la construction de la liste
 */
 
+typedef enum	e_type
+{
+	INT,
+	STRING
+}				t_type;
+
 typedef struct	elem
 {
 	char	*str;
