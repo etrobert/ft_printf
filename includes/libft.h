@@ -13,9 +13,29 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/*
+** Needed for NULL declaration
+*/
+
 # include <string.h>
+
+/*
+** Needed for write declaration ft_putchar...
+*/
+
 # include <unistd.h>
+
+/*
+** Needed for malloc declaration
+*/
+
 # include <stdlib.h>
+
+/*
+** Needed for variadic function ft_printf
+*/
+
+# include <stdarg.h>
 
 # include "ft_bool.h"
 # include "ft_slist.h"
@@ -130,5 +150,7 @@ void			*ft_memdup(const void *ptr, size_t size);
 void			*ft_lstfold(t_list *lst, void *(*f)(void *, void *));
 
 void			*ft_nrealloc(void *ptr, size_t old_size, size_t new_size);
+
+int	ft_printf(const char *format, ...);
 
 #endif
