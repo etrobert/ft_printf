@@ -12,11 +12,12 @@
 ** a jour a chaque ajout de elem lors de la construction de la liste
 */
 
-typedef enum	e_type
+typedef enum	e_ft_pri_spec;
 {
 	INT,
 	STRING
-}				t_type;
+}				t_ft_pri_spec;
+
 
 typedef struct	elem
 {
@@ -25,7 +26,33 @@ typedef struct	elem
 	t_elem	*next;
 }				t_elem;
 
+typedef enum	s_ft_pri_sign
+{
+	DEFAULT,
+	SIGN_ON,
+	SPACE
+}				t_ft_pri_sign;
+
+typedef struct	s_args
+{
+	t_bool			left_justify;
+	t_ft_pri_sign	sign;
+	t_bool			sharp;
+	t_bool			zero;
+
+	int				min_size;
+
+	int				precision;
+
+	t_ft_pri_spec	sp;
+}				t_args;
+
 char	*concatenate(t_elem *first);
+
+size_t	store(t_slist *par)
+{
+	if 
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -49,8 +76,7 @@ int	ft_printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 			mode = TRUE;
-		else
-			ft_putchar(format[i]);
+		else ft_putchar(format[i]);
 		i++;
 	}
 	va_end(ap);
